@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Retro Lab - Interactive Live Demos</title>
+  <!-- Google Fonts for Retro Vibe -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap" rel="stylesheet">
+  
+  <script type="module" crossorigin src="./assets/index-ffa80128.js"></script>
+  <link rel="stylesheet" href="./assets/index-3ec58277.css">
+</head>
+<body>
+  <!-- CRT Screen overlay for retro scanlines (optional visual effect) -->
+  <div class="crt-overlay"></div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="retro-header">
+      <div class="header-logo">
+        <span class="logo-icon">🕹️</span>
+        <h1>JS_RETRO_LAB</h1>
+      </div>
+      <div class="header-tagline">// Live JavaScript Concepts Visualizer</div>
+    </header>
+
+    <!-- Main Section Tabs -->
+    <nav class="section-tabs" role="tablist">
+      <button class="tab-btn active" id="tab-basics" role="tab" aria-selected="true" data-section="basics">
+        1. Basics of JS
+      </button>
+      <button class="tab-btn" id="tab-arrays" role="tab" aria-selected="false" data-section="arrays">
+        2. Arrays & Methods
+      </button>
+      <button class="tab-btn" id="tab-advanced" role="tab" aria-selected="false" data-section="advanced">
+        3. Advanced JS
+      </button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Sidebar Navigation: Topics for Basics of JS -->
+      <aside class="sidebar retro-card">
+        <h2 class="sidebar-title" id="sidebar-title">Basics Topics</h2>
+        <ul class="topic-list" id="topic-list">
+          <li><button class="topic-btn active" data-topic="arithmetic">Arithmetic</button></li>
+          <li><button class="topic-btn" data-topic="boolean">Boolean</button></li>
+          <li><button class="topic-btn" data-topic="comparison">Comparison operators</button></li>
+          <li><button class="topic-btn" data-topic="typeconversion">TypeConversion</button></li>
+          <li><button class="topic-btn" data-topic="variables">Variables</button></li>
+          <li><button class="topic-btn" data-topic="strings">Strings</button></li>
+          <li><button class="topic-btn" data-topic="conditional">Conditional (if)</button></li>
+          <li><button class="topic-btn" data-topic="forloop">ForLoop</button></li>
+          <li><button class="topic-btn" data-topic="logicaloperators">Logical Operators</button></li>
+          <li><button class="topic-btn" data-topic="switch">Switch</button></li>
+          <li><button class="topic-btn" data-topic="whileanddowhile">While & Do...While</button></li>
+          <li><button class="topic-btn" data-topic="datetime">Date & Time</button></li>
+          <li><button class="topic-btn" data-topic="functions">Functions</button></li>
+          <li><button class="topic-btn" data-topic="objects">Objects</button></li>
+          <li><button class="topic-btn" data-topic="objectsmanipulation">Object Manipulation</button></li>
+        </ul>
+      </aside>
+
+      <!-- Center & Right Workspace Grid -->
+      <div class="workspace">
+        
+        <!-- Left Side: Live Code Editor -->
+        <section class="editor-section retro-card">
+          <div class="card-header">
+            <span class="card-title">📝 CODE_EDITOR</span>
+            <div class="window-controls">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+          </div>
+          <div class="editor-wrapper">
+            <div class="line-numbers" id="line-numbers"></div>
+            <textarea id="code-editor" spellcheck="false" autocomplete="off" autofocus></textarea>
+          </div>
+          <div class="editor-actions">
+            <button class="retro-btn btn-reset" id="btn-reset" title="Reset to template code">
+              ♻️ Reset
+            </button>
+            <button class="retro-btn btn-run" id="btn-run">
+              ⚡ Run Code
+            </button>
+          </div>
+        </section>
+
+        <!-- Right Side: Split Visualizer and Terminal Console -->
+        <div class="output-split">
+          
+          <!-- Upper: Visualizer Display -->
+          <section class="visualizer-section retro-card">
+            <div class="card-header">
+              <span class="card-title">👁️ LIVE_VISUALIZER</span>
+              <span class="topic-indicator" id="current-topic-indicator">Arithmetic</span>
+            </div>
+            <div class="visualizer-body" id="visualizer-body">
+              <!-- Dynamically populated visualizer contents -->
+            </div>
+          </section>
+
+          <!-- Lower: Terminal Console -->
+          <section class="console-section retro-card">
+            <div class="card-header">
+              <span class="card-title">📟 RETRO_CONSOLE</span>
+              <button class="retro-btn btn-clear" id="btn-clear-console">Clear</button>
+            </div>
+            <div class="console-body" id="console-body">
+              <!-- Simulated terminal output lines -->
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="retro-footer">
+      <div class="footer-status">SYSTEM READY // CLK: <span id="footer-time">00:00:00</span></div>
+      <div class="footer-author">Press ⚡ to Execute JS on variables</div>
+    </footer>
+  </div>
+
+  
+</body>
+</html>
